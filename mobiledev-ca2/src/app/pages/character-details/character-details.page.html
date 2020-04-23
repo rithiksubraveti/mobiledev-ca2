@@ -1,9 +1,69 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>characterDetails</ion-title>
-  </ion-toolbar>
+	<ion-toolbar color="success">
+		<ion-buttons slot="start">
+			<ion-back-button defaulthref="/tabs/characters"></ion-back-button>
+		</ion-buttons>
+		<ion-title> {{ character?.name }}</ion-title>
+
+		<ion-buttons slot="end">
+			<ion-button (click)="unfavouriteCharacter()" *ngIf="isFavourite">
+				<ion-icon name="thumbs-up" slot="icon-only"></ion-icon>
+			</ion-button>
+			<ion-button (click)="favouriteCharacter()" *ngIf="!isFavourite">
+				<ion-icon name="thumbs-up-outline" slot="icon-only"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+	<ion-card class="movie-card" *ngIf="character">
 
-</ion-content>
+		<ion-item class="movie-info" lines="none">
+			<img [src]="character.img" >
+            </ion-item>
+
+			<!-- show all the character info by icon followed by text -->
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="key-outline" slot="start"></ion-icon>
+				ID : {{ character.char_id }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="gift-outline" slot="start"></ion-icon>
+				Birthday : {{ character.birthday }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="briefcase-outline" slot="start"></ion-icon>
+				Occupation : {{ character.occupation }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="warning-outline" slot="start"></ion-icon>
+				Status : {{ character.status }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="at-outline" slot="start"></ion-icon>
+				Nickname : {{ character.nickname }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="eye-outline" slot="start"></ion-icon>
+				Appearance : {{ character.appearance }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="videocam-outline" slot="start"></ion-icon>
+				Portrayed : {{ character.portrayed }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon color="success" name="film-outline" slot="start"></ion-icon>
+				Category : {{ character.category }}
+			</ion-item>
+
+
+	</ion-card>
