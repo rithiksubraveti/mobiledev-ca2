@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar color="primary">
     <ion-title>Quotes</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,4 +11,8 @@
        {{ quote.quote }}
        </ion-item>
    </ion-list>
+   <ion-infinite-scroll threshold="5" (ionInfinite)="loadData($event)" [disabled]="numTimesLeft <= 0">
+				<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+				</ion-infinite-scroll-content>
+			</ion-infinite-scroll>
 </ion-content>

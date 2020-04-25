@@ -29,7 +29,6 @@ export class CharacterDetailsPage implements OnInit {
         });
     }
 
-    //favourite / unfavourite for each character
     favouriteCharacter() {
         this.favouriteService.favouriteCharacter(this.characterId).then(() => {
             this.isFavourite = true;
