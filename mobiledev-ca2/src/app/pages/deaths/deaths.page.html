@@ -11,6 +11,9 @@
 			Death-Count : {{ death.deathCount }}
 		</ion-item>
 	</ion-card>
+    <ion-list class="bg-transparent">
+         
+</ion-list>
     <ion-infinite-scroll threshold="5" (ionInfinite)="loadData($event)" [disabled]="numTimesLeft <= 0">
 				<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
 				</ion-infinite-scroll-content>
